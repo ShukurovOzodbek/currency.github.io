@@ -1,38 +1,110 @@
-.App {
-  text-align: center;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto';
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.exchange {
+  padding: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.exchange h4 {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.currency {
+  margin-top: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.currency span {
+  color: #c4c4c4;
+  font-size: 24px;
+}
+
+.from {
+  background: linear-gradient(180deg, rgba(27, 18, 78, 0.2) 0%, #0F0B38 93.37%);
+  box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  width: 48%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.currency {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+}
+
+.from .sel select {
+  background: transparent;
+  border: none;
+  color: rgb(159, 159, 159);
+  font-size: 28px;
+  outline: none;
+}
+
+.from input {
+  background: #32395E;
+  border-radius: 5px;
+  border: none;
+  width: 87%;
+  padding: 10px;
+  color: white;
+  outline: none;
+}
+
+.from input::-webkit-inner-spin-button {
+  display: none;
+}
+
+.inp {
+  position: relative;
+}
+
+.inp span {
+  position: absolute;
+  right: 78px;
+  font-size: 24px;
+  top: 4px;
+}
+
+.sel {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.box_from_to {
+  background: linear-gradient(180deg, rgba(27, 18, 78, 0.2) -153.98%, #0F0B38 140.59%);
+  box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  width: 97.7%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 30px;
+}
+
+.box_from_to h2 {
+  color: white;
+  font-size: 34px;
+}
+
+.exchange_btn {
+  background: linear-gradient(88.43deg, #1288E8 11.5%, #0097E8 76.7%);
+  box-shadow: 0px 4px 12px rgb(0 0 0 / 15%);
+  border-radius: 8px;
+  color: white;
+  padding: 10px;
+  width: 120px;
+  cursor: pointer;
+  transform: translate(450%, 20px);
+  border: none;
 }

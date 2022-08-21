@@ -1,0 +1,135 @@
+.transaction_page .top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.transaction_page .top h4 {
+    color: white;
+}
+
+.transaction_page .top button {
+    background: linear-gradient(271.88deg, #3887FE 4.26%, #3BA0FF 51.37%, #5FB2FF 99.01%);
+    box-shadow: 0px 2px 4px rgba(85, 35, 221, 0.4);
+    border-radius: 25px;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.filter {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+}
+
+.filter span {
+    color: #c4c4c4;
+    font-size: 16px;
+}
+
+.filter_btn {
+    display: flex;
+    gap: 10px;
+    color: #c4c4c4;
+}
+
+.filter_btn a {
+    cursor: pointer;
+}
+
+.filter_btn .active_btn {
+    color: white;
+    background: #32395E;
+    border-radius: 5px;
+    border-bottom: 2px solid #3887FE;
+    width: 40px;
+    text-align: center;
+}
+
+.transaction_page ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+}
+
+.circle {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #3887FE;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.transaction_page ul li {
+    background: #1f1e61;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    color: white;
+}
+
+.transaction_page ul li .date_time {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.transaction_page ul li .date_time span:nth-child(2) {
+    color: #c4c4c4;
+}
+
+.transaction_page ul li .center_time {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.transaction_page ul li .end {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.transaction_page ul li .end b {
+    font-size: 14px;
+}
+
+.transaction_page ul li .end .wait {
+    background: #32395E;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    min-width: 87px;
+}
+
+.transaction_page ul li .end .error {
+    background: #F35050;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    min-width: 87px;
+}
+
+.transaction_page ul li .end .completed {
+    background: rgba(0, 232, 172, 0.75);
+    border-radius: 5px;
+    border: none;
+    color: white;
+    padding: 10px;
+    min-width: 87px;
+    cursor: pointer;
+}

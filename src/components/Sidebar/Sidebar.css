@@ -1,0 +1,122 @@
+.App {
+    width: 100%;
+    height: 100vh;
+    background-color: #20135C;
+    display: flex;
+}
+.sidebar {
+    background: #1C0F54;
+    filter: drop-shadow(0px -5px 25px rgba(0, 3, 32, 0.5));
+    border-radius: 8px 0px 0px 8px;
+    top: 0;
+    bottom: 0;
+    width: 17%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    justify-content: space-between;
+}
+
+.top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.underline {
+    margin-bottom: 20px;
+    width: 80%;
+}
+
+ul {
+    list-style-type: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+h2 {
+    background: linear-gradient(271.88deg, #3887FE 4.26%, #3BA0FF 51.37%, #5FB2FF 99.01%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0px 5px 12px rgba(6, 5, 19, 0.25);
+    border-radius: 5px;
+    font-size: 24px;
+}
+
+.underline {
+    margin-bottom: 20px;
+    width: 39%;
+    border-bottom: 3px solid #3887FE;
+}
+
+.center li {
+    background: #32395E;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.center ul {
+    width: 100%;
+}
+
+.center ul li {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    opacity: .6;
+}
+
+.top {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.center {
+    width: 100%;
+}
+
+.center ul .active {
+    opacity: 1;
+    border-bottom: 2px solid #3887FE;
+}
+
+.bottom {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.line {
+    margin-bottom: 20px;
+    width: 80%;
+    border-bottom: 3px solid #3887FE;
+}
+
+.bottom li {
+    color: white;
+    opacity: .6;
+}
+
+.bottom ul {
+    display: flex;
+    margin-left: 45px;
+}
+
+.bottom li {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+}

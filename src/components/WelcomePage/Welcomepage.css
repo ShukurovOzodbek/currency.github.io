@@ -1,0 +1,158 @@
+.App {
+    width: 100%;
+    height: 100vh;
+    background-color: #20135C;
+    padding: 70px;
+    display: flex;
+    gap: 70px;
+}
+
+.right {
+    position: absolute;
+    right: 20%;
+    top: 36%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.line {
+    width: 100%;
+    height: 0px;
+    border-radius: 100px;
+    border-bottom: 3px solid #1288E8;
+}
+
+.right span {
+    color: #FFFFFF;
+    font-weight: 300;
+    font-size: 24px;
+    text-shadow: 0px 4px 20px rgba(1, 143, 255, 0.15);
+}
+
+h1 {
+    background: linear-gradient(271.88deg, #3887FE 4.26%, #3BA0FF 51.37%, #5FB2FF 99.01%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0px 5px 12px rgba(6, 5, 19, 0.25);
+    border-radius: 5px;
+    font-size: 72px;
+}
+
+.form {
+    background: linear-gradient(180deg, #1E1156, rgba(28, 35, 64, 0));
+    width: 30%;
+    box-shadow: 0px 15px 40px rgb(0 0 0 / 25%);
+    border-radius: 8px;
+    padding: 20px;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    position: absolute;
+    z-index: 100;
+}
+
+.form h2 {
+    font-size: 36px;
+    color: #ffffff;
+    text-shadow: 0px 4px 20px rgba(1, 143, 255, 0.15);
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+form {
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+form input {
+    padding: 15px;
+    outline: none;
+    border: none;
+    background: #2E3558;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 5%);
+    border-radius: 8px;
+    color: white;
+    width: 100%;
+    padding-left: 53px;
+    font-size: 16px;
+}
+
+.form a {
+    text-decoration-line: underline;
+    color: #5FB2FF;
+    transform: translateY(50px);
+}
+
+.btn button {
+    background: linear-gradient(88.43deg, #2F3453 11.5%, #242845 76.7%);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    border: none;
+    color: white;
+    padding: 10px;
+    width: 100px;
+    cursor: pointer;
+}
+
+.btn .active_btn {
+    background: linear-gradient(271.88deg, #3887FE 4.26%, #3BA0FF 51.37%, #5FB2FF 99.01%);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+}
+
+.btn {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+.input .image {
+    border-radius: 100px;
+    width: 51px;
+    height: 51px;
+    overflow: hidden;
+    position: absolute;
+    top: 33%;
+    transform: translate(2px, -2px);
+}
+
+.input .img {
+    position: absolute;
+    transform: translate(3px, 5px);
+}
+
+.images {
+    position: absolute;
+}
+
+.first {
+    transform: translate(546%, 165%);
+}
+
+.third {
+    transform: translate(-218%, -142%);
+}
+
+.second {
+    transform: translate(298%, -169%);
+    z-index: 0;
+    position: absolute;
+}

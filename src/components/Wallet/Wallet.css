@@ -1,0 +1,159 @@
+.content2 {
+    padding: 10px;
+}
+
+.boxes2 {
+    padding: 10px;
+    display: flex;
+    overflow-x: scroll;
+    width: 100%;
+}
+
+.boxes2::-webkit-scrollbar {
+    display: none;
+}
+
+.content2 h4 {
+    color: white;
+    font-size: 20px;
+}
+
+.boxes2 .balance {
+    width: 30%;
+    height: 8%;
+    display: flex;
+    align-items: center;
+}
+
+.boxes2 .chartpie img {
+    width: 174px;
+    transform: translateX(-6px);
+}
+
+.boxes2 .numbers span b {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    right: -71px;
+}
+
+.coins {
+    display: flex;
+    gap: 10px;
+    margin-left: 10px;
+    width: 70%;
+}
+
+.coin {
+    background: linear-gradient(237.07deg, rgba(96, 67, 146, 0.5) -8.06%, rgba(15, 11, 56, 0.5) 96.63%);
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    padding: 10px;
+    width: 47%;
+    position: relative;
+}
+
+.coin h4 {
+    font-size: 16px;
+}
+
+.bit {
+    display: flex;
+    position: absolute;
+    right: 40px;
+    align-items: center;
+    top: 10px;
+}
+
+.costs {
+    display: flex;
+    flex-direction: column;
+}
+
+.costs p {
+    display: flex;
+    justify-content: flex-end;
+    color: #c4c4c4;
+}
+
+.costs span {
+    color: white;
+    font-size: 18px;
+}
+
+.bit img {
+    margin-top: 15px;
+}
+
+.center_img img {
+    position: absolute;
+    top: 93px;
+    right: 30px;
+    width: 322px;
+}
+
+.coins .blue {
+    background: linear-gradient(237.07deg, #6162D6 -8.06%, #0F0B38 96.63%);
+    border-radius: 5px;
+}
+
+.box_linegraph img {
+    width: 477px;
+    transform: translateX(-10px);
+}
+
+.transact {
+    background: linear-gradient(176.95deg, rgba(27, 18, 78, 0.2) -32.8%, #0F0B38 88.83%);
+    border-radius: 5px;
+    width: 56.8%;
+    height: 30%;
+    margin-top: 16px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.act {
+    display: flex;
+}
+
+.transact .line {
+    margin-top: 10px;
+    border-bottom: 1px solid #3887FE;
+    width: 100%;
+}
+
+.tr {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tr_left {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.tr_names {
+    display: flex;
+    flex-direction: column;
+}
+
+.tr_left span {
+    color: #c4c4c4;
+}
+
+.tr_names span {
+    color: white;
+}
+
+.tr_names span:nth-child(2) {
+    color: #c4c4c4;
+    font-size: 12px;
+}
+
+.tr_right {
+    color: white;
+}
