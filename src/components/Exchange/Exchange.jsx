@@ -1,8 +1,45 @@
-import React from 'react'
+import { React, useState, useEffect} from 'react'
 import bitcoin_icon from '../../assets/bitcoin_icon.png'
+import Input from '../Input/Input';
 import './Exchange.css'
+import axios from 'axios';
 
 const Exchange = () => {
+    const [currency1, setCurrency1] = useState("UZS");
+    const [currency2, setCurrency2] = useState("USD");
+    const [amount1, setAmount1] = useState(1);
+    const [amount2, setAmount2] = useState(1);
+    const [rates, setRates] = useState({});
+
+    const API_KEY = "SzkW4JIGuBKj8XaJoRS5kpDY8PMdfjdd";
+
+    useEffect(() => {
+        axios.get(`https://api.apilayer.com/fixer/latest?base=USD&apikey=${API_KEY}`)
+            .then((res) => {
+                if (res.status === 200 || res.status === 201) {
+                    setRates(res.data.rates);
+                }
+            });
+    }, []);
+
+    function handleChangeAmount1(amount1) {
+        setAmount2(amount1 * rates[currency2] / rates[currency1]);
+        setAmount1(amount1);
+    }
+    function handleChangeCurrency1(currency1) {
+        setAmount2(amount1 * rates[currency2] / rates[currency1]);
+        setCurrency1(currency1);
+    }
+
+    function handleChangeAmount2(amount2) {
+        setAmount1(amount2 * rates[currency1] / rates[currency2]);
+        setAmount2(amount2);
+    }
+    function handleChangeCurrency2(currency2) {
+        setAmount2(amount2 * rates[currency1] / rates[currency2]);
+        setCurrency2(currency2);
+    }
+
     return (
         <div className="exchange">
             <h4>Exchange</h4>
@@ -10,31 +47,29 @@ const Exchange = () => {
                 <div className="from">
                     <span>From</span>
                     <div className="sel">
-                        <select value='Ethereum'>
-                            <option value="Ethereum">Ethereum</option>
-                            <option value="GridCoin">GridCoin</option>
-                            <option value="PeerCoin">PeerCoin</option>
-                        </select>
                         <img src={bitcoin_icon} alt="" />
                     </div>
                     <div className="inp">
-                        <input type="number" />
-                        <span>ETH</span>
+                        <Input
+                            onChangeAmount={handleChangeAmount1}
+                            onChangeCurrency={handleChangeCurrency1}
+                            amount={amount1}
+                            currency={currency1}
+                            rates={Object.keys(rates)} />
                     </div>
                 </div>
                 <div className="from">
                     <span>To</span>
                     <div className="sel">
-                        <select value='Ethereum'>
-                            <option value="Bitcoin">Bitcoin</option>
-                            <option value="GridCoin">GridCoin</option>
-                            <option value="PeerCoin">PeerCoin</option>
-                        </select>
                         <img src={bitcoin_icon} alt="" />
                     </div>
                     <div className="inp">
-                        <input type="number" />
-                        <span>BTC</span>
+                        <Input
+                            onChangeAmount={handleChangeAmount2}
+                            onChangeCurrency={handleChangeCurrency2}
+                            amount={amount2}
+                            currency={currency2}
+                            rates={Object.keys(rates)} />
                     </div>
                 </div>
             </div>

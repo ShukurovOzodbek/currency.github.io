@@ -14,9 +14,9 @@ function App() {
       <div className="cont">
         <Header />
         {/* <Overview /> */}
-        <Wallet />
+        {/* <Wallet /> */}
         {/* <Tranz /> */}
-        {/* <Exchange /> */}
+        <Exchange />
       </div>
     </div>
   )
