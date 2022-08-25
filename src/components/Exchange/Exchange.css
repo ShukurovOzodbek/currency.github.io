@@ -101,3 +101,8 @@
     transform: translate(450%, 20px);
     border: none;
 }
+.image_flag {
+    width: 177px;
+    position: absolute;
+    transform: translate(347px, -172px);
+}

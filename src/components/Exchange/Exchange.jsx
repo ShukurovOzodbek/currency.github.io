@@ -1,4 +1,4 @@
-import { React, useState, useEffect} from 'react'
+import { React, useState, useEffect } from 'react'
 import bitcoin_icon from '../../assets/bitcoin_icon.png'
 import Input from '../Input/Input';
 import './Exchange.css'
@@ -50,13 +50,14 @@ const Exchange = () => {
                         <img src={bitcoin_icon} alt="" />
                     </div>
                     <div className="inp">
+                        <img className='image_flag' src={`https://countryflagsapi.com/png/${currency1.slice(0,2)}`} alt="" />
                         <Input
                             onChangeAmount={handleChangeAmount1}
                             onChangeCurrency={handleChangeCurrency1}
                             amount={amount1}
                             currency={currency1}
-                            rates={Object.keys(rates)} 
-                            />
+                            rates={Object.keys(rates)}
+                        />
                     </div>
                 </div>
                 <div className="from">
@@ -65,13 +66,14 @@ const Exchange = () => {
                         <img src={bitcoin_icon} alt="" />
                     </div>
                     <div className="inp">
+                        <img className='image_flag' src={`https://countryflagsapi.com/png/${currency2.slice(0,2)}`} alt="" />
                         <Input
                             onChangeAmount={handleChangeAmount2}
                             onChangeCurrency={handleChangeCurrency2}
                             amount={amount2}
                             currency={currency2}
                             rates={Object.keys(rates)}
-                            />
+                        />
                     </div>
                 </div>
             </div>
