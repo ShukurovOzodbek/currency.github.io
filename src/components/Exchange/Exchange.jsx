@@ -7,14 +7,14 @@ import axios from 'axios';
 const Exchange = () => {
     const [currency1, setCurrency1] = useState("UZS");
     const [currency2, setCurrency2] = useState("USD");
-    const [amount1, setAmount1] = useState(1);
-    const [amount2, setAmount2] = useState(1);
+    const [amount1, setAmount1] = useState(0);
+    const [amount2, setAmount2] = useState(0);
     const [rates, setRates] = useState({});
 
-    const API_KEY = "SzkW4JIGuBKj8XaJoRS5kpDY8PMdfjdd";
+    // const API_KEY = "SzkW4JIGuBKj8XaJoRS5kpDY8PMdfjdd";
 
     useEffect(() => {
-        axios.get(`https://api.apilayer.com/fixer/latest?base=USD&apikey=${API_KEY}`)
+        axios.get(`https://cdn.cur.su/api/latest.json`)
             .then((res) => {
                 if (res.status === 200 || res.status === 201) {
                     setRates(res.data.rates);
@@ -55,7 +55,8 @@ const Exchange = () => {
                             onChangeCurrency={handleChangeCurrency1}
                             amount={amount1}
                             currency={currency1}
-                            rates={Object.keys(rates)} />
+                            rates={Object.keys(rates)} 
+                            />
                     </div>
                 </div>
                 <div className="from">
@@ -69,7 +70,8 @@ const Exchange = () => {
                             onChangeCurrency={handleChangeCurrency2}
                             amount={amount2}
                             currency={currency2}
-                            rates={Object.keys(rates)} />
+                            rates={Object.keys(rates)}
+                            />
                     </div>
                 </div>
             </div>

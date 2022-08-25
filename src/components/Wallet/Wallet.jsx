@@ -1,11 +1,12 @@
 import React from 'react'
-import piechart from '../../assets/piechart.png'
 import eth from '../../assets/eth.png'
 import btc from '../../assets/btc.png'
 import dash from '../../assets/dash.png'
 import bitcoin_icon from '../../assets/bitcoin_icon.png'
 import linegraph2 from '../../assets/linegraph2.png'
 import './Wallet.css'
+import DoughChart from '../Charts/DoughtChart'
+import LineChart from '../Charts/LineChart'
 
 const Wallet = () => {
     const arr = [
@@ -55,7 +56,7 @@ const Wallet = () => {
             <div className="boxes2">
                 <div className="balance">
                     <div className="chartpie">
-                        <img src={piechart} alt="" />
+                        <DoughChart w="70%" h="70%" arr={[]} arr2={[18, 18, 64]} />
                     </div>
                     <div className="numbers">
                         <span><img src={eth} alt="" /> Ethereum <b>18%</b> </span>
@@ -83,7 +84,7 @@ const Wallet = () => {
             </div>
             <div className="act">
                 <div className="box_linegraph">
-                    <img src={linegraph2} alt="" />
+                    <LineChart w="100%" h="100%" arr={[2, 4, 6, 8, 10, 12, 14, 16]} arr2={[28, 21, 40, 35, 43, 43, 45, 48]} />
                 </div>
                 <div className="transact">
                     <h4>RECENT TRANSACTIONS</h4>

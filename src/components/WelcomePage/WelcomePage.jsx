@@ -27,7 +27,7 @@ const WelcomePage = () => {
                         </div>
                         <div className="btn">
                             <button>SIGN IN</button>
-                            <button className='active_btn'>SIGN IN</button>
+                            <button className='active_btn'><a style={{color: 'white', textDecoration: 'none'}} href="/app">SIGN IN</a></button>
                         </div>
                     </form>
                     <a href="#">Forgot your password?</a>

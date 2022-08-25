@@ -5,6 +5,7 @@
     display: flex;
 }
 .sidebar {
+    position: absolute;
     background: #1C0F54;
     filter: drop-shadow(0px -5px 25px rgba(0, 3, 32, 0.5));
     border-radius: 8px 0px 0px 8px;
@@ -18,6 +19,7 @@
     padding-top: 20px;
     padding-bottom: 40px;
     justify-content: space-between;
+    left: 0;
 }
 
 .top {
@@ -55,19 +57,20 @@ h2 {
     border-bottom: 3px solid #3887FE;
 }
 
-.center li {
+.center .li {
     background: #32395E;
     border-radius: 5px;
     padding: 10px;
     color: white;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .center ul {
     width: 100%;
 }
 
-.center ul li {
+.center ul .li {
     width: 100%;
     display: flex;
     align-items: center;
@@ -119,4 +122,10 @@ h2 {
     align-items: center;
     gap: 20px;
     cursor: pointer;
+}
+
+.center ul .li:hover{
+    opacity: 1;
+    transition: .1s ease;
+    border-bottom: 2px solid #3887FE;
 }

@@ -1,23 +1,29 @@
 import './App.css';
-import Sidebar from './components/Sidebar/Sidebar';
-// import WelcomePage from './components/WelcomePage/WelcomePage';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import WelcomePage from './components/WelcomePage/WelcomePage';
+import Main from './components/Main/Main';
 import Overview from './components/Overview/Overview';
-import Wallet from './components/Wallet/Wallet';
 import Tranz from './components/Tranz/Tranz';
-import Header from './components/Header/Header';
 import Exchange from './components/Exchange/Exchange';
+import Market from './components/Market/Market';
+import Wallet from './components/Wallet/Wallet'
 
 function App() {
   return (
-    <div className="App">
-      <Sidebar />
-      <div className="cont">
-        <Header />
-        {/* <Overview /> */}
-        {/* <Wallet /> */}
-        {/* <Tranz /> */}
-        <Exchange />
-      </div>
+    <div className='App'>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/app' element={<Main />}>
+              <Route path="/app/wallet" element={<Wallet />} />
+              <Route path="/app/overview" element={<Overview />} />
+              <Route index element={<Overview />} />
+              <Route path="/app/transictions" element={<Tranz />} />
+              <Route path="/app/exchange" element={<Exchange />} />
+              <Route path="/app/market" element={<Market />} />
+          </Route>
+          <Route index element={<WelcomePage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   )
 }
