@@ -46,9 +46,6 @@ const Exchange = () => {
             <div className="currency">
                 <div className="from">
                     <span>From</span>
-                    <div className="sel">
-                        <img src={bitcoin_icon} alt="" />
-                    </div>
                     <div className="inp">
                         <img className='image_flag' src={`https://countryflagsapi.com/png/${currency1.slice(0,2)}`} alt="" />
                         <Input
@@ -62,9 +59,6 @@ const Exchange = () => {
                 </div>
                 <div className="from">
                     <span>To</span>
-                    <div className="sel">
-                        <img src={bitcoin_icon} alt="" />
-                    </div>
                     <div className="inp">
                         <img className='image_flag' src={`https://countryflagsapi.com/png/${currency2.slice(0,2)}`} alt="" />
                         <Input
