@@ -3,21 +3,23 @@ import eth from '../../assets/eth.png'
 import btc from '../../assets/btc.png'
 import dash from '../../assets/dash.png'
 import bitcoin_icon from '../../assets/bitcoin_icon.png'
-import linegraph2 from '../../assets/linegraph2.png'
 import './Wallet.css'
 import DoughChart from '../Charts/DoughtChart'
 import LineChart from '../Charts/LineChart'
+import Coin from '../Coin/Coin'
+import line from '../../assets/line.png'
+import raise from '../../assets/raise.png'
+
+
 
 const Wallet = () => {
     const arr = [
         {
             name: 'BitCoin',
-            image: '/assets/line',
             back: ''
         },
         {
             name: 'Ethereum',
-            image: '/assets/line2',
             back: 'blue'
         }
     ]
@@ -26,27 +28,22 @@ const Wallet = () => {
         {
             name: 'Recived BitCoin',
             author: 'From Elon Musk',
-            img: '/assets/raise',
         },
         {
             name: 'Recived BitCoin',
             author: 'From Elon Musk',
-            img: '/assets/raise',
         },
         {
             name: 'Recived BitCoin',
             author: 'From Elon Musk',
-            img: '/assets/low',
         },
         {
             name: 'Recived BitCoin',
             author: 'From Elon Musk',
-            img: '/assets/raise',
         },
         {
             name: 'Recived BitCoin',
             author: 'From Elon Musk',
-            img: '/assets/low',
         }
     ]
 
@@ -66,19 +63,7 @@ const Wallet = () => {
                 </div>
                 <div className="coins">
                     {
-                        arr.map(item => <div className={`coin ${item.back}`}>
-                            <h4>{item.name}</h4>
-                            <div className="bit">
-                                <div className="costs">
-                                    <span>5 248 USD</span>
-                                    <p>+2,59%</p>
-                                </div>
-                                <img src={bitcoin_icon} alt="" />
-                            </div>
-                            <div className="center_img">
-                                <img src={item.image + '.png'} alt="" />
-                            </div>
-                        </div>)
+                        arr.map((item, index) => <Coin key={index} bitcoin_icon={bitcoin_icon} back={item.back} image={line} name={item.name} />)
                     }
                 </div>
             </div>
@@ -93,7 +78,7 @@ const Wallet = () => {
                         transact.map((item, index) => <div className="tr">
                             <div className="tr_left">
                                 <span>AM 01:16</span>
-                                <img src={item.img + '.png'} alt="" />
+                                <img src={raise} alt="" />
                                 <div className="tr_names">
                                     <span>{item.name}</span>
                                     <span>{item.author}</span>

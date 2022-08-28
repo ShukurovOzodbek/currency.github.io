@@ -53,14 +53,6 @@ const WelcomePage = () => {
         localStorage.setItem('usersIn', JSON.stringify(arrIn))
         localStorage.setItem('usersUp', JSON.stringify(arrUp))
         window.location.href = 'http://localhost:3000/app'
-
-        let inputs = document.querySelectorAll('form input')
-
-        inputs.forEach(inp => {
-            inp.value = ''
-            setEmail('')
-            setPassword('')
-        });
     }
 
     return (

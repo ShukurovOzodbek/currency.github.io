@@ -30,7 +30,7 @@ const Sidebar = () => {
                 <div className="underline"></div>
                 <div className="center">
                     <ul>
-                        <Link onClick={tabAction} to="/app/overview" className='active li'><img src={overview} alt="" />Overview</Link>
+                        <Link onClick={tabAction} to="/app/overview" className='li'><img src={overview} alt="" />Overview</Link>
                         <Link onClick={tabAction} className='li' to="/app/wallet"><img src={wallet} alt="" /> Wallets</Link>
                         <Link onClick={tabAction} to="/app/transictions" className='li'><img src={transict} alt="" />Transictions</Link>
                         <Link onClick={tabAction} to="/app/exchange" className='li'><img src={exchange} alt="" />Exchange</Link>

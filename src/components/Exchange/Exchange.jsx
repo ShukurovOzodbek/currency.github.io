@@ -11,8 +11,6 @@ const Exchange = () => {
     const [amount2, setAmount2] = useState(0);
     const [rates, setRates] = useState({});
 
-    // const API_KEY = "SzkW4JIGuBKj8XaJoRS5kpDY8PMdfjdd";
-
     useEffect(() => {
         axios.get(`https://cdn.cur.su/api/latest.json`)
             .then((res) => {
@@ -72,9 +70,9 @@ const Exchange = () => {
                 </div>
             </div>
             <div className="box_from_to">
-                <h2>from</h2>
+                <h2>Currency: {currency1}, sum: {amount1}</h2>
                 <h2>=========={">"}</h2>
-                <h2>to</h2>
+                <h2>Currency: {currency2}, sum: {amount2}</h2>
             </div>
             <button className='exchange_btn'>Exchange</button>
         </div>
