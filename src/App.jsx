@@ -7,23 +7,34 @@ import Tranz from './components/Tranz/Tranz';
 import Exchange from './components/Exchange/Exchange';
 import Market from './components/Market/Market';
 import Wallet from './components/Wallet/Wallet'
+import { ThemeContext } from "./ThemeContext";
+import { useState } from "react";
 
 function App() {
+  const [theme, setTheme] = useState(false)
+  function toggleTheme() {
+    setTheme(!theme)
+  }
   return (
     <div className='App'>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/app' element={<Main />}>
+      <ThemeContext.Provider value={{
+        theme,
+        toggle: toggleTheme
+      }}>
+        <BrowserRouter>
+          <Routes>
+            <Route path='/app' element={<Main />}>
               <Route path="/app/wallet" element={<Wallet />} />
               <Route path="/app/overview" element={<Overview />} />
               <Route index element={<Overview />} />
               <Route path="/app/transictions" element={<Tranz />} />
               <Route path="/app/exchange" element={<Exchange />} />
               <Route path="/app/market" element={<Market />} />
-          </Route>
-          <Route index element={<WelcomePage />} />
-        </Routes>
-      </BrowserRouter>
+            </Route>
+            <Route index element={<WelcomePage />} />
+          </Routes>
+        </BrowserRouter>
+      </ThemeContext.Provider>
     </div>
   )
 }

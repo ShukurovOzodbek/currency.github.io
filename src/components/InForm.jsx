@@ -1,23 +1,62 @@
 import React, { useState } from 'react'
-import six from '../assets/six.png'
-import nine from '../assets/nine.png'
+import axios from '../api/api'
+import { Button } from '@mui/material'
 
-const InForm = ({onPassword, onEmail , password, email}) => {
+const LOGIN_URL = '/auth'
+
+const Login = () => {
+
+    let [user, setUser] = useState('')
+    let [pwd, setPwd] = useState('')
+    let [errMsg, setErrMsg] = useState('')
+    let [success, setSuccess] = useState(false)
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            await axios.post(LOGIN_URL, JSON.stringify({ user, pwd }),
+                {
+                    headers: { "content-type": "application/json" },
+                    withCredentials: true
+                })
+
+            setUser('')
+            setPwd('')
+            setSuccess(true)
+            console.log(success);
+            window.location.href = 'http://localhost:3000/app'
+        } catch (err) {
+            if (!err.response) {
+                setErrMsg('No server response')
+            } else if (err.response?.status === 400) {
+                setErrMsg('Missing Username or password')
+            } else if (err.response?.status === 401) {
+                setErrMsg('Unauthorized')
+            } else {
+                setErrMsg('Login failed')
+            }
+        }
+    }
 
     return (
         <>
-            <div className="input">
-                <div className="image imagesli">
-                    <img src={nine} alt="" />
-                </div>
-                <input required name='email' defaultValue={email}  placeholder='Email or Login' onChange={(e) => onEmail(e.target.value)} type="email" />
-            </div>
-            <div className="input">
-                <img className='img' src={six} alt="" />
-                <input required name='password' type="password" defaultValue={password} onChange={(e) => onPassword(e.target.value)} placeholder='Password' />
-            </div>
+            <form style={{
+                width: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                margin: '200px auto',
+                gap: '15px'
+            }} onSubmit={handleSubmit}>
+                <h2 style={{ color: 'red' }}>{errMsg}</h2>
+                <h2 variant='h2'>Log in</h2>
+                <input placeholder='Username' type="text" value={user} onChange={(e) => setUser(e.target.value)} />
+                <input placeholder='Password' type="text" value={pwd} onChange={(e) => setPwd(e.target.value)} />
+                <Button type='submit' sx={{ width: '30%' }} variant='contained'>Send</Button>
+            </form>
         </>
     )
 }
 
-export default InForm
+export default Login

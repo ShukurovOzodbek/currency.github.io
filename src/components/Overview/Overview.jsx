@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext, useMemo, useState } from 'react'
 import eth from '../../assets/eth.png'
 import btc from '../../assets/btc.png'
 import dash from '../../assets/dash.png'
@@ -8,8 +8,14 @@ import DoughChart from '../Charts/DoughtChart'
 import LineChart from '../Charts/LineChart'
 import lower from '../../assets/lower.png'
 import higher from '../../assets/higher.png'
+import { ThemeContext } from "../../ThemeContext";
 
 const Overview = () => {
+
+  const { theme, toggle } = useContext(ThemeContext)
+
+  const [name, setName] = useState(0)
+
   const arr = [
     {
       name: 'BitCoin',
@@ -33,13 +39,13 @@ const Overview = () => {
     }
   ]
   return (
-    <div className="content">
+    <div className="content" style={{ background: theme ? "black" : "transparent" }}>
       <div className="date">
         <div className="date_theme">
           <h3>Overview</h3>
-          <span>25 October, Sunday</span>
+          <span>25 October, Sunday {name}</span>
         </div>
-        <button className="add">Add Widget</button>
+        <button onClick={toggle} className="add">Add Widget</button>
       </div>
       <div className="boxes">
         <div className="balance">
