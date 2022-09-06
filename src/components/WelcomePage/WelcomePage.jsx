@@ -13,7 +13,6 @@ const WelcomePage = () => {
         <>
             <div className="left">
                 <div className="form">
-                    <h2>Welcome!</h2>
                     <InForm />
                     <img className='images first ' src={blue} alt="" />
                     <img className='images second' src={blue_4} alt="" />

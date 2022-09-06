@@ -7,20 +7,15 @@ import Tranz from './components/Tranz/Tranz';
 import Exchange from './components/Exchange/Exchange';
 import Market from './components/Market/Market';
 import Wallet from './components/Wallet/Wallet'
-import { ThemeContext } from "./ThemeContext";
+import { AuthContext } from "./AuthContext";
 import { useState } from "react";
 
 function App() {
-  const [theme, setTheme] = useState(false)
-  function toggleTheme() {
-    setTheme(!theme)
-  }
+  const [auth, setAuth] = useState({})
+
   return (
-    <div className='App'>
-      <ThemeContext.Provider value={{
-        theme,
-        toggle: toggleTheme
-      }}>
+    <AuthContext.Provider value={{ auth, setAuth }}>
+      <div className='App'>
         <BrowserRouter>
           <Routes>
             <Route path='/app' element={<Main />}>
@@ -34,8 +29,8 @@ function App() {
             <Route index element={<WelcomePage />} />
           </Routes>
         </BrowserRouter>
-      </ThemeContext.Provider>
-    </div>
+      </div>
+    </AuthContext.Provider>
   )
 }
 

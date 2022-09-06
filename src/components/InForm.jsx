@@ -1,10 +1,15 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from '../api/api'
 import { Button } from '@mui/material'
+import { useContext } from 'react'
+import { AuthContext } from '../AuthContext'
+
 
 const LOGIN_URL = '/auth'
 
 const Login = () => {
+
+    let { setAuth, auth } = useContext(AuthContext)
 
     let [user, setUser] = useState('')
     let [pwd, setPwd] = useState('')
@@ -14,17 +19,25 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post(LOGIN_URL, JSON.stringify({ user, pwd }),
+            let res = await axios.post(LOGIN_URL, JSON.stringify({ user, pwd }),
                 {
                     headers: { "content-type": "application/json" },
                     withCredentials: true
                 })
 
+            const accessToken = res?.data?.accessToken
+            const roles = res?.data?.roles
+            setAuth({ user, pwd, roles, accessToken })
+            localStorage.setItem('auth', JSON.stringify(auth))
+            
+            let authO = JSON.parse(localStorage.getItem('auth'))
+            if(authO.accessToken){
+                window.location.href = '/app'
+            }
             setUser('')
             setPwd('')
+            setErrMsg('')
             setSuccess(true)
-            console.log(success);
-            window.location.href = 'http://localhost:3000/app'
         } catch (err) {
             if (!err.response) {
                 setErrMsg('No server response')

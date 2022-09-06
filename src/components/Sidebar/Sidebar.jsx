@@ -22,7 +22,12 @@ const Sidebar = () => {
             }
         });
     }
+    let main = JSON.parse(localStorage.getItem('auth'))
 
+    let name 
+    if(main){
+        name = main.user
+    }
     return (
         <div className="sidebar">
             <div className="top">
@@ -41,8 +46,8 @@ const Sidebar = () => {
             <div className="bottom">
                 <div className="line"></div>
                 <ul>
-                    <li><img src={cir} alt="" /> Mike Jackson</li>
-                    <li><img src={logout} alt="" /> Log out</li>
+                    <li><img src={cir} alt="" />{ name }</li>
+                    <li><img src={logout} alt="" /> <a style={{all: 'unset'}} onClick={() => localStorage.clear()} href="/">Log out</a></li>
                 </ul>
             </div>
         </div>

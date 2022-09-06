@@ -3,6 +3,7 @@ import bitcoin_icon from '../../assets/bitcoin_icon.png'
 import Input from '../Input/Input';
 import './Exchange.css'
 import axios from 'axios';
+import { Fade } from 'react-reveal';
 
 const Exchange = () => {
     const [currency1, setCurrency1] = useState("UZS");
@@ -39,43 +40,40 @@ const Exchange = () => {
     }
 
     return (
-        <div className="exchange">
-            <h4>Exchange</h4>
-            <div className="currency">
-                <div className="from">
-                    <span>From</span>
-                    <div className="inp">
-                        <img className='image_flag' src={`https://countryflagsapi.com/png/${currency1.slice(0,2)}`} alt="" />
-                        <Input
-                            onChangeAmount={handleChangeAmount1}
-                            onChangeCurrency={handleChangeCurrency1}
-                            amount={amount1}
-                            currency={currency1}
-                            rates={Object.keys(rates)}
-                        />
+        <Fade bottom>
+
+            <div className="exchange">
+                <h4>Exchange</h4>
+                <div className="currency">
+                    <div className="from">
+                        <span>From</span>
+                        <div className="inp">
+                            <img className='image_flag' src={`https://countryflagsapi.com/png/${currency1.slice(0, 2)}`} alt="" />
+                            <Input
+                                onChangeAmount={handleChangeAmount1}
+                                onChangeCurrency={handleChangeCurrency1}
+                                amount={amount1}
+                                currency={currency1}
+                                rates={Object.keys(rates)}
+                            />
+                        </div>
                     </div>
-                </div>
-                <div className="from">
-                    <span>To</span>
-                    <div className="inp">
-                        <img className='image_flag' src={`https://countryflagsapi.com/png/${currency2.slice(0,2)}`} alt="" />
-                        <Input
-                            onChangeAmount={handleChangeAmount2}
-                            onChangeCurrency={handleChangeCurrency2}
-                            amount={amount2}
-                            currency={currency2}
-                            rates={Object.keys(rates)}
-                        />
+                    <div className="from">
+                        <span>To</span>
+                        <div className="inp">
+                            <img className='image_flag' src={`https://countryflagsapi.com/png/${currency2.slice(0, 2)}`} alt="" />
+                            <Input
+                                onChangeAmount={handleChangeAmount2}
+                                onChangeCurrency={handleChangeCurrency2}
+                                amount={amount2}
+                                currency={currency2}
+                                rates={Object.keys(rates)}
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
-            <div className="box_from_to">
-                <h2>Currency: {currency1}, sum: {amount1}</h2>
-                <h2>=========={">"}</h2>
-                <h2>Currency: {currency2}, sum: {amount2}</h2>
-            </div>
-            <button className='exchange_btn'>Exchange</button>
-        </div>
+        </Fade>
     )
 }
 
